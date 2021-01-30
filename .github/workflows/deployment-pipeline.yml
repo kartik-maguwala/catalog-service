@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Change permission of gradlew
+        - run: chmod +x ./gradlew
       - name: Build and test application
         run: ./gradlew build
   package:
@@ -35,5 +37,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build Docker image
         run: ./gradlew bootBuildImage
+      - name: Change permission of gradlew
+        run: chmod +x ./gradlew
       - name: Push to Docker Hub
         run: docker push kartikmaguwala/catalog-service:0.0.1-SNAPSHOT
