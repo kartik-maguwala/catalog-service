@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: 11
       - name: Change permission of gradlew
-        - run: chmod +x ./gradlew
+        run: chmod +x ./gradlew
       - name: Build and test application
         run: ./gradlew build
   package:
