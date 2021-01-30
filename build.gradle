@@ -39,7 +39,7 @@ dependencyManagement {
 }
 
 bootBuildImage {
-	imageName = "polarbookshop/${project.name}:${project.version}"
+	imageName = "kartikmaguwala/${project.name}:${project.version}"
 	environment = ["BP_JVM_VERSION": "11.*"]
 }
 
